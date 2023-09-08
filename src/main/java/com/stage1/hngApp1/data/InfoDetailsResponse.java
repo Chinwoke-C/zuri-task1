@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class InfoDetailsResponse {
-    private String slackName;
+    private String slack_name;
     private String currentDayOfTheWeek;
     private String currentUTCTime;
     private String track;

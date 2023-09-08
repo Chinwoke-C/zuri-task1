@@ -17,7 +17,7 @@ public class InfoDetailsController {
 
     @GetMapping("")
     public ResponseEntity<InfoDetailsResponse> getInfoDetails(
-            @RequestParam String slackName,
+            @RequestParam String slack_name,
             @RequestParam String track
     ){
         //get current day of the week
@@ -32,7 +32,7 @@ public class InfoDetailsController {
         String githubFileUrl = "https://github.com/Chinwoke-C/zuri-task1/blob/main/src/main/java/com/stage1/hngApp1/controller/InfoDetailsController.java";
         String githubRepoUrl = "https://github.com/Chinwoke-C/zuri-task1";
 
-        InfoDetailsResponse response = new InfoDetailsResponse(slackName,currentDayOfTheWeek,currentUTCTime,track, githubFileUrl, githubRepoUrl);
+        InfoDetailsResponse response = new InfoDetailsResponse(slack_name,currentDayOfTheWeek,currentUTCTime,track, githubFileUrl, githubRepoUrl);
         return ResponseEntity.ok(response);
     }
 }
