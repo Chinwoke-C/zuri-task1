@@ -22,17 +22,17 @@ public class InfoDetailsController {
     ){
         //get current day of the week
         SimpleDateFormat dayOfWeekFormat = new SimpleDateFormat("EEEE", Locale.ENGLISH);
-        String currentDay = dayOfWeekFormat.format(new Date());
+        String currentDayOfTheWeek = dayOfWeekFormat.format(new Date());
 
         //get current time in utc
         SimpleDateFormat utcTimeFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
-        String currentTime = utcTimeFormat.format(new Date());
+        String currentUTCTime = utcTimeFormat.format(new Date());
 
         //Github urls
         String githubFileUrl = "https://github.com/Chinwoke-C/zuri-task1/blob/main/src/main/java/com/stage1/hngApp1/controller/InfoDetailsController.java";
         String githubRepoUrl = "https://github.com/Chinwoke-C/zuri-task1";
 
-        InfoDetailsResponse response = new InfoDetailsResponse(currentDay, currentTime, slackName, track, githubFileUrl, githubRepoUrl);
+        InfoDetailsResponse response = new InfoDetailsResponse(slackName,currentDayOfTheWeek,currentUTCTime,track, githubFileUrl, githubRepoUrl);
         return ResponseEntity.ok(response);
     }
 }
