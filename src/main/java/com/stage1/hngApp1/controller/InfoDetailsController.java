@@ -1,6 +1,6 @@
 package com.stage1.hngApp1.controller;
 
-import com.stage1.hngApp1.data.InfoDetails;
+import com.stage1.hngApp1.data.InfoDetailsResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +16,7 @@ import java.util.Locale;
 public class InfoDetailsController {
 
     @GetMapping("")
-    public ResponseEntity<InfoDetails> getInfoDetails(
+    public ResponseEntity<InfoDetailsResponse> getInfoDetails(
             @RequestParam String slackName,
             @RequestParam String track
     ){
@@ -29,6 +29,10 @@ public class InfoDetailsController {
         String currentTime = utcTimeFormat.format(new Date());
 
         //Github urls
+        String githubFileUrl = "https://github.com/Chinwoke-C/zuri-task1/blob/main/src/main/java/com/stage1/hngApp1/controller/InfoDetailsController.java";
+        String githubRepoUrl = "https://github.com/Chinwoke-C/zuri-task1";
 
+        InfoDetailsResponse response = new InfoDetailsResponse(currentDay, currentTime, slackName, track, githubFileUrl, githubRepoUrl);
+        return ResponseEntity.ok(response);
     }
 }
