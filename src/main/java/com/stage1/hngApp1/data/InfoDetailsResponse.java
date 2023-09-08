@@ -7,10 +7,10 @@ import lombok.Data;
 @AllArgsConstructor
 public class InfoDetailsResponse {
     private String slack_name;
-    private String currentDayOfTheWeek;
-    private String currentUTCTime;
+    private String current_day;
+    private String utc_time;
     private String track;
-    private String githubFileUrl;
-    private String githubRepoUrl;
-    private final int status = 200;
+    private String github_file_url;
+    private String github_repo_url;
+    private final int status_code = 200;
 }
